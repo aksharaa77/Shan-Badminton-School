@@ -19,8 +19,10 @@
     *,*::before,*::after{
       box-sizing:border-box
     }
-    html,body{
-      height:100%}
+    html, body {
+  width: 100%;        /* ensures body fits the viewport */
+  overflow-x: hidden; /* disables horizontal scrolling */
+}
     html {
   scroll-padding-top: 90px; /* adjust based on your header height */
 }
