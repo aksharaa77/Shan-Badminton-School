@@ -19,8 +19,11 @@
     *,*::before,*::after{
       box-sizing:border-box
     }
-    html,body{
-      height:100%}
+    html, body {
+  width: 100%;        /* ensures body fits the viewport */
+  overflow-x: hidden; /* disables horizontal scrolling */
+}
+
     html {
   scroll-padding-top: 90px; /* adjust based on your header height */
 }
@@ -418,32 +421,40 @@ header.topbar {
     }
 
     /* Contact */
-    #contact-heading{
-      font-size: 3rem;
-    }
-    .contact-grid{
-      display:grid;
-      grid-template-columns:1fr 420px;
-      gap:20px
-    }
-    .contact-card{
-      background:var(--card);
-      padding:18px;
-      border-radius:12px
-    }
-    .contact-form{
-      display:flex;
-      flex-direction:column;
-      gap:12px
-    }
-    input,textarea,select{
-      padding:12px;
-      border:1px solid rgba(10,20,30,0.06);
-      border-radius:10px;
-      font-size:0.95rem;
-      background:white
-    }
-    input::placeholder,textarea::placeholder{color:var(--muted)}
+    /* Contact */
+#contact-heading {
+  font-size: 3rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 20px;
+  align-items: stretch;     /* NEW: equal height cards */
+}
+
+.contact-card {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 12px;
+  height: 100%;             /* NEW: ensures stretching */
+  display: flex;
+  flex-direction: column;   /* keeps internal layout clean */
+}
+
+input, textarea, select {
+  padding: 12px;
+  border: 1px solid rgba(10,20,30,0.06);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  background: white;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted);
+}
+
 
     /* Footer */
     footer{
