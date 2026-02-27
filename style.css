@@ -792,3 +792,16 @@
     .schedule-row { flex-direction: column; gap: 0.3rem; }
     .sched-times { text-align: left; }
   }
+@media (max-width: 768px) {
+  .nav-logo {
+    gap: 0.5rem; /* reduce space between logo and text */
+  }
+
+  .brand img {
+    width: 36px;  /* smaller logo */
+    height: 28px;
+    border-radius: 26px;
+  }
+
+  
+}
